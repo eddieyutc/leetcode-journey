@@ -21,10 +21,9 @@ Example 3:
 Input: ransomNote = "aa", magazine = "aab"
 Output: true
 
-
 ## Constraints
 
-- 1 <= ransomNote.length, magazine.length <= 105
+- 1 <= ransomNote.length, magazine.length <= 10^5
 - ransomNote and magazine consist of lowercase English letters.
 
 ## Solution
@@ -35,7 +34,7 @@ The runtime complexity is O(mn)
 
 Constructing a map for the character occurrence in both ransomNote and magazine can reduce it to O(n) but inducing a O(n) cost in memory.
 
-### Result
+### Performance
 
 Using the occurrence map solution
 

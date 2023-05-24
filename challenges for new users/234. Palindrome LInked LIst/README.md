@@ -12,7 +12,7 @@ Output: false
 
 ## Constraints
 
-- The number of nodes in the list is in the range [1, 105].
+- The number of nodes in the list is in the range [1, 10^5].
 - 0 <= Node.val <= 9
 
 ## Solution
@@ -27,7 +27,7 @@ steps:
    3. new Node becomes the new reversedHead
 2. compare the nodes from both list at the same index
 
-### Result
+### Performance
 
 Runtime: 173ms (46.15%)
 Memory: 87MB (12.87%)
