@@ -21,4 +21,11 @@ Explanation: Since the list has two middle nodes with values 3 and 4, we return 
 
 ## Solution
 
+To know where the middle node is we need to know the length of the linked list.
+
+We'll run a first pass through the linked list to get the length of the linked list. Get the middle index, then run the second pass to return the node.
+
 ### Performance
+
+Runtime: 65ms (37.29%)
+Memory: 43.1MB (67.91%)
