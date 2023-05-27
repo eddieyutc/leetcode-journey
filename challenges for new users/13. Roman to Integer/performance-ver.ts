@@ -20,31 +20,18 @@ function isSubtractable(first: RomanSymbol, second: RomanSymbol): boolean {
   return subtractableGroup.get(first)?.includes(second) ?? false
 }
 
-function parse(roman: RomanSymbol[]): [RomanSymbol, RomanSymbol] {
-  const first = roman[0]
-  const second = roman[1]
-  return [first, second]
-}
-
-function parseRoman(roman: RomanSymbol[], sum: number): number {
-  if (roman.length === 0) {
-    return sum
-  }
-  if (roman.length === 1) {
-    return sum + SymbolToInt.get(roman[0])!
-  }
-  const [first, second] = parse(roman)
-  if (isSubtractable(first, second)) {
-    const combinedTotal = SymbolToInt.get(second)! - SymbolToInt.get(first)!
-    return parseRoman(roman.slice(2), sum + combinedTotal)
-  }
-  const firstInteger = SymbolToInt.get(first)!
-  return parseRoman(roman.slice(1), sum + firstInteger)
-}
-
 function romanToInt(roman: string) {
-  const symbols = roman.split('') as RomanSymbol[]
-  return parseRoman(symbols, 0)
+  let sum = 0
+  let previous = '' as RomanSymbol
+  for (let i = roman.length - 1; i >= 0; i--) {
+    if (isSubtractable(roman[i] as RomanSymbol, previous)) {
+      sum -= SymbolToInt.get(roman[i] as RomanSymbol)!
+    } else {
+      sum += SymbolToInt.get(roman[i] as RomanSymbol)!
+    }
+    previous = roman[i] as RomanSymbol
+  }
+  return sum
 }
 
 export {}
