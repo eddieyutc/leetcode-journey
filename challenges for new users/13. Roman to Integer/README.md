@@ -44,7 +44,11 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 ## Solution
 
+The original solution I came up with is decent with runtime performance but uses quite a lot of memory. 
+
 ### Performance
+
+original version:
 
 Runtime: 119ms (93.27%)
 Memory: 49.9MB (22.64%)
