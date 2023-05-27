@@ -27,7 +27,23 @@ steps:
    3. new Node becomes the new reversedHead
 2. compare the nodes from both list at the same index
 
+An O(1) space solution will probably require modifying the original input in place, which sounds a bit uncomfortable to me for I have been very accustomed to the idea of functional programming and immutability.
+
+steps:
+
+1. get length of linked list
+2. find middle node
+3. reverse the second half of the list. If length is odd, skip the first node
+4. compare each node from both list
+
 ### Performance
+
+Original solution
 
 Runtime: 173ms (46.15%)
 Memory: 87MB (12.87%)
+
+O(1)-space solution
+
+Runtime: 135ms (82.40%)
+Memory: 73.2MB (55.45%)
