@@ -44,7 +44,7 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
 
 ## Solution
 
-The original solution I came up with is decent with runtime performance but uses quite a lot of memory. 
+The original solution I came up with is decent with runtime performance but uses quite a lot of memory. First improvement is to use Map instead of plain JavaScript objects.
 
 ### Performance
 
@@ -52,3 +52,13 @@ original version:
 
 Runtime: 119ms (93.27%)
 Memory: 49.9MB (22.64%)
+
+1st improvement (replace object with map)
+
+Runtime: 142ms (37.8%)
+Memory: 48.6MB (60.15%)
+
+2nd improvement (remove prefix symbol check in isSubtractable())
+
+Runtime: 129ms (75.72%)
+Memory: 48.9MB (50.15%)

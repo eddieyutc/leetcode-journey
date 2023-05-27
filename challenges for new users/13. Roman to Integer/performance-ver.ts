@@ -10,8 +10,6 @@ const SymbolToInt = new Map([
 
 type RomanSymbol = 'I' | 'V' | 'X' | 'L' | 'C' | 'D' | 'M'
 
-const prefixSymbol = ['I', 'X', 'C']
-
 const subtractableGroup = new Map([
   ['I', ['V', 'X']],
   ['X', ['L', 'C']],
@@ -19,10 +17,7 @@ const subtractableGroup = new Map([
 ]) as Map<RomanSymbol, RomanSymbol[]>
 
 function isSubtractable(first: RomanSymbol, second: RomanSymbol): boolean {
-  return (
-    prefixSymbol.includes(first) &&
-    (subtractableGroup.get(first)?.includes(second) ?? false)
-  )
+  return subtractableGroup.get(first)?.includes(second) ?? false
 }
 
 function parse(roman: RomanSymbol[]): [RomanSymbol, RomanSymbol] {
