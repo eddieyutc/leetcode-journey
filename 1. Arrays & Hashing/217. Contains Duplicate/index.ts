@@ -1,5 +1,5 @@
 function containsDuplicate(nums: number[]): boolean {
-  let occurrences = new Set() as Set<number>
+  const occurrences = new Set<number>()
   for (const num of nums) {
     if (occurrences.has(num)) {
       return true
@@ -8,4 +8,4 @@ function containsDuplicate(nums: number[]): boolean {
     }
   }
   return false
-};
+}
