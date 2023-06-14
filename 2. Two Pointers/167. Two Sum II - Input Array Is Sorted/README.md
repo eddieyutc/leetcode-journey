@@ -44,26 +44,12 @@ Explanation: The sum of -1 and 0 is -1. Therefore index1 = 1, index2 = 2. We ret
 
 ## Solution
 
-Pointer a starts at 0, pointer b starts at the end
-if (a+b > target), a/b move left until (a+b <= target)
-else if (a+b < target), a/b move right until (a+b >= target)
-
-[1,2,3,4,8,10,11,13,15]
-target: 20
-
-a starts at: 1
-b starts with: 15
-
-(a+b < 20)
-a move right until (a+b >= 20): 8
-
-(a+b > 20)
-b move left until (a+b <= 20) to: 11
-
-(a+b < 20)
-a move right until (a+b >= 20): 10
+Pointer head starts at 0, pointer tail starts at the end
+if (head + tail > target), tail move left
+else if (head + tail < target), head move right
+return if target found
 
 ### Performance
 
-Runtime: 80ms (24.4%)
-Memory: 43.5MB (74.97%)
+Runtime: 64ms (75.49%)
+Memory: 44MB (32.14%)
